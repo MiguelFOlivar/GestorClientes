@@ -209,7 +209,7 @@ http://localhost:8080/swagger-ui.html
 
 ### **Si deseas contribuir al proyecto, sigue estos pasos:**
 1. **Realiza un fork del repositorio**
-2. **Crea una nueva rama( `git checkout -b feature-nueva-funcionalidad`).
+2. Crea una nueva rama( `git checkout -b feature-nueva-funcionalidad`).
 3. Haz tus cambios y añade pruebas si es necesario
 4. Realiza un commit (`git commit -am 'Añadir nueva funcionalidad'`).
 5. Haz push a tu rama (`git push feature-nueva-funcionalidad`).
