@@ -1,7 +1,5 @@
 # Proyecto de Gestión de Clientes - API RESTful
 
-[![Build Status](https://img.shields.io/github/workflow/status/MiguelFOlivar/GestorClientes/CI)](https://github.com/MiguelFOlivar/GestorClientes/actions)
-[![Test Coverage](https://img.shields.io/codecov/c/github/MiguelFOlivar/GestorClientes)](https://codecov.io/gh/MiguelFOlivar/GestorClientes)
 ![Static Badge](https://img.shields.io/badge/Java-%2017%2B-green?style=flat&logo=CoffeeScript&label=Java)
 ![Static Badge](https://img.shields.io/badge/Spring-%203.0%2B-brightgreen?style=flat&logo=Spring%20Boot)
 ![Oracle](https://img.shields.io/badge/Oracle-%2012c%2B-red?style=flat)
@@ -19,6 +17,8 @@ El proyecto proporciona un conjunto de funcionalidades para gestionar los regist
 - **Consulta avanzada**: Buscar clientes por nombre o correo electrónico.
 
 La API está diseñada para ser utilizada en sistemas de gestión de clientes donde se necesita almacenar y consultar información como nombre, correo electrónico, y realizar actualizaciones en los registros.
+
+
 
 ## Tecnologías Utilizadas
 
@@ -45,6 +45,37 @@ A continuación se listan los detalles de conexion y configuración.
 
 Este controlador gestiona las operaciones sobre los clientes.
 
+
+#### **GET** `/api/clientes/findall`
+
+Consulta los clientes almacenados.
+
+##### Request Body:
+
+**Respuesta 200 OK en formato JSON**
+
+```json
+[
+  { "nombre": "Juan Pérez", "email": "juan@mail.com" },
+  { "nombre": "John Doe", "email": "jdoe@mail.com" }
+]
+
+```
+
+
+#### **GET** `/api/clientes/getByEmail`
+
+Consulta un cliente por su email.
+
+##### Parámetros:
+- `email` (Requerido) : El correo por el que se consultará el cliente. Debe ser un String
+  
+**Respuesta 200 OK en formato JSON**
+
+```json
+  { "nombre": "Juan Pérez", "email": "juan@mail.com" },
+```
+
 #### **POST** `/api/clientes/create`
 
 Crea un nuevo cliente.
@@ -56,6 +87,38 @@ Crea un nuevo cliente.
   "nombre": "Juan Pérez",
   "email": "juan@mail.com"
 }
+```
+
+#### **POST** `/api/clientes/batch`
+
+Crea una lista de clientes.
+
+##### Request Body:
+
+```json
+[
+    {
+        "nombre": "Johny Bravo",
+        "email": "Bravo@mail.com"
+    },
+    {
+        "nombre": "Marge Simpson",
+        "email": "marge@simpson.com"
+    },
+    {
+        "nombre": "Homer Simpson",
+        "email": "homer@simpson.com"
+    },
+    {
+        "nombre": "Bart Simpson",
+        "email": "bart@simpson.com"
+    },
+    {
+        "nombre": "Lisa Simpson",
+        "email": "lisa@simpson.com"
+    }
+]
+
 ```
 
 ## Configuración de Oracle
@@ -95,8 +158,62 @@ server.port=8080 (puedes cambiar el puerto si lo requieres)
 
 ```
 
+## Swagger - Documentación Interactiva
+
+La API está documentada automáticamente utilizando Swagger. 
+Puedes acceder a la documentación interactiva y probar los endpoints directamente desde tu navegador.
+
+**Swagger UI:**
+```
+http://localhost:8080/swagger-ui.html
+```
+
+## Instalación y Configuración
+**Requisitos:**
+
+- Java 17+
+- Maven 3.8+
+- IDE (Ejemplo: IntelliJ IDEA, Eclipse)
+- Oracle Database (Instalado y configurado para usar en desarrollo)
+
+## Pasos para ejecutar el proyecto
+
+1. **Clona el repositorio**
+   ```
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+   
+   ```
+2. **Navega al directorio del proyecto**
+   ```
+   cd tu-repositorio
+
+   ```
+3. **Construye el proyecto usando Maven**
+   ```
+   mvn clean install
+   
+   ```
+4. **Configura tu base de datos de Oracle:** Asegurate de que la base de datos esté configurada correctamente.
+5. **Ejecuta el proyecto**
+   ```
+   mvn spring-boot:run
+
+   ```
+6. **La aplicación estará disponible en**
+   ```
+   http://localhost:8080
+   
+   ```
+
+## Contribuciones
+
+### **Si deseas contribuir al proyecto, sigue estos pasos:**
+1. **Realiza un fork del repositorio**
+2. **Crea una nueva rama( `git checkout -b feature-nueva-funcionalidad`).
+3. Haz tus cambios y añade pruebas si es necesario
+4. Realiza un commit (`git commit -am 'Añadir nueva funcionalidad'`).
+5. Haz push a tu rama (`git push feature-nueva-funcionalidad`).
+6. Abre un Pull Request.
 
 
-
-
-
+   
