@@ -167,6 +167,12 @@ Puedes acceder a la documentación interactiva y probar los endpoints directamen
 ```
 http://localhost:8080/swagger-ui.html
 ```
+![image](https://github.com/user-attachments/assets/fcd71147-14d6-46bd-b902-d4005a06e590)
+
+![image](https://github.com/user-attachments/assets/444303fe-5661-4428-9800-2b088e3fd999)
+
+![image](https://github.com/user-attachments/assets/6608d27d-23f3-42d9-bf3d-cacdb184e74d)
+
 
 ## Instalación y Configuración
 **Requisitos:**
